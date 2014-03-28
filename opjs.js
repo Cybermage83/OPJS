@@ -174,7 +174,7 @@ c.call(o); // 30 reference has changed of this
 /*** OP# 6 : true type ***/
 
 toString.call([]);           // [object Array]
-toString.call({}});          // [object Object]
+toString.call({});          // [object Object]
 toString.call(2);            // [object Number]
 toString.call('[]');         // [object String]
 toString.call(true);         // [object Boolean]
