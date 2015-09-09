@@ -58,10 +58,9 @@ D.getZ() // output [3]
 // closures stores their outer values by references. not by value
 
 var arrParser = function ( arr ) {
-	var i = 0, l, result = [],
-		z = function ( i ) { result[i] = function () { return arr[i]+' '+i}; };
+	var i = 0, l, result = [];
 	for (l = arr.length; i < l; ++i) {
-		z( i );
+		result[i] = function () { return arr[i]+' '+i};
 	}
 
 	return result;
@@ -70,12 +69,10 @@ var arrParser = function ( arr ) {
 parser[0](); // undefined 5
 
 var arrParser = function (arr) {
-	var i = 0, l, result = [];
-
+	var i = 0, l, result = [],
+			z = function ( i ) { result[i] = function () { return arr[i]+' '+i}; };
 	for (l = arr.length; i < l; ++i) {
-		(function (i) {
-			result[i] = function () { return arr[i]+' '+i};
-		} (i));
+		z( i );
 	}
 
 	return result;
