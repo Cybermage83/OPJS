@@ -42,9 +42,9 @@ d.pushVal(3); // [1,2,3]
 
 d.getZ(); // output [1,2,3];
 
-A = new z;
-S = new z;
-D = new z;
+A = new Z;
+S = new Z;
+D = new Z;
 
 A.pushVal(1); // [1]
 S.pushVal(2); // [2]
