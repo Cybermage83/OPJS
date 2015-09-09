@@ -57,11 +57,11 @@ D.getZ() // output [3]
 
 // closures stores their outer values by references. not by value
 
-var arrParser = function (arr) {
-	var i = 0, l, result = [];
-
+var arrParser = function ( arr ) {
+	var i = 0, l, result = [],
+		z = function ( i ) { result[i] = function () { return arr[i]+' '+i}; };
 	for (l = arr.length; i < l; ++i) {
-		result[i] = function () { return arr[i]+' '+i};
+		z( i );
 	}
 
 	return result;
